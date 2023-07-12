@@ -1,14 +1,14 @@
-// import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Navbar.css";
 
 export function Navbar() {
-  //   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.jwt);
-  //   const [userId, setUserId] = useState(localStorage.user_id);
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.jwt);
+  const [userId, setUserId] = useState(localStorage.user_id);
 
-  //   useEffect(() => {
-  //     setIsLoggedIn(!!localStorage.jwt);
-  //     setUserId(localStorage.user_id);
-  //   }, []);
+  useEffect(() => {
+    setIsLoggedIn(!!localStorage.jwt);
+    setUserId(localStorage.user_id);
+  }, []);
 
   return (
     <nav className="navbar">
@@ -18,7 +18,12 @@ export function Navbar() {
           <li className="navbar--list--item">
             <a href="#">Home</a>
           </li>
-          {/* <a href="/hikes">HYKZ</a> | <a href="/users/">HYKR</a> */}
+          <li className="navbar--list--item">
+            <a href="#">HYKZ</a>
+          </li>
+          <li className="navbar--list--item">
+            {isLoggedIn ? <a href={`/users/${userId}`}>HYKR</a> : <a href="/signup">Signup</a>}
+          </li>
         </ul>
       </div>
     </nav>
