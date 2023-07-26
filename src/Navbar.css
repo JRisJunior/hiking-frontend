@@ -8,8 +8,11 @@
 }
 
 .navbar--title {
-  color: #FFF;
   margin-right: auto;
+}
+
+.navbar--title > a {
+  color: #FFF;
 }
 
 .navbar--list {
