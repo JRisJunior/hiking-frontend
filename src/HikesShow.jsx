@@ -18,11 +18,12 @@ export function HikesShow() {
   return (
     <>
       <h1>{hike.name}</h1>
-      <h1> information</h1>
-      {/* <p>Name: {props.photo.name}</p>
-      <p>Url: {props.photo.url}</p>
-      <p>Width: {props.photo.width}</p>
-      <p>Height: {props.photo.height}</p> */}
+      <h2>Details</h2>
+      <p> Location: {hike.city}, {hike.region}, {hike.country}</p>
+      <p> Difficulty: {hike.difficulty}</p>
+      <hr></hr>
+      <h2>Description: </h2>
+      <p>{hike.description}</p>
     </>
   );
 }
