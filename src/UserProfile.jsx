@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import "./UserProfile.css";
 import axios from "axios";
 
 export function UserProfile() {
-  // const { userId } = useParams();
+  const { userId } = useParams();
   const [user, setUser] = useState([]);
   const hikes = [
     {
@@ -105,13 +105,13 @@ export function UserProfile() {
   ];
 
   const handleShowUser = () => {
-    axios.get("http://localhost:3000/users/1").then((response) => {
+    axios.get(`http://localhost:3000/users/${userId}`).then((response) => {
       console.log(response.data);
       setUser(response.data);
     });
   };
 
-  useEffect(handleShowUser, []);
+  useEffect(handleShowUser, [userId]);
 
   return (
     <>

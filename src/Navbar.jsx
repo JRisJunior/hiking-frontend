@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import "./Navbar.css";
+import { useState, useEffect } from "react";
 import { LogoutLink } from "./LogoutLink";
 
 export function Navbar() {
@@ -21,7 +21,6 @@ export function Navbar() {
           <li className="navbar--list--item">
             <a href="/hikes">HYKZ</a>
           </li>
-          <li className="navbar--list--item">{isLoggedIn ? <a href="/users">HYKRZ</a> : null}</li>
           <li className="navbar--list--item">
             {isLoggedIn ? <a href={`/users/${userId}`}>HYKR</a> : <a href="/signup">Signup</a>}
           </li>
