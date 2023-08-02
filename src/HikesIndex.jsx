@@ -5,6 +5,7 @@ export function HikesIndex(props) {
       {props.hikes.map((hike) => (
         <div key={hike.id}>
           <h2>{hike.name}</h2>
+          <p>ID: {hike.id}</p>
           <p>Length: {hike.length}</p>
           <p>Location: {hike.city}, {hike.region}</p>
         </div>
