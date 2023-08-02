@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { HikesIndex } from "./HikesIndex";
+import { HikesShow } from "./HikesShow";
 
 export function Content() {
 
@@ -24,6 +25,7 @@ export function Content() {
   return (
     <div>
       <HikesIndex hikes={hikes}/>
+      <HikesShow showHike={showHike}/>
     </div>
   )
 }
