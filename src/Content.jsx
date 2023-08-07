@@ -28,6 +28,7 @@ export function Content() {
      setIsHikesShowVisible(true);
      setCurrentHike(hike);
    };
+
    const handleClose = () => {
      console.log("handleClose");
      setIsHikesShowVisible(false);
@@ -37,8 +38,9 @@ export function Content() {
     <div>
       <HikesIndex hikes={hikes} onShowHike={handleShowHike}/>
       <Modal show={isHikesShowVisible} onClose={handleClose}>
-        <h1>Test</h1>
+        <HikesShow hike={currentHike} />  
       </Modal>
+
     </div>
   )
 }
