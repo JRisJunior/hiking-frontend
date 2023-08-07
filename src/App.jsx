@@ -1,6 +1,8 @@
 import { Header } from "./Header";
 import { Home } from "./Home";
 import { Footer } from "./Footer";
+import { Content } from "./Content";
+import { HikesShow } from "./HikesShow";
 import { Login } from "./Login";
 import { Signup } from "./Signup";
 import { UserProfile } from "./UserProfile";
