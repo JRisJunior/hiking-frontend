@@ -36,7 +36,7 @@ export function Content() {
   return (
     <div>
       <HikesIndex hikes={hikes} onShowHike={handleShowHike}/>
-      <Modal show={true}>
+      <Modal show={isHikesShowVisible} onClose={handleClose}>
         <h1>Test</h1>
       </Modal>
     </div>

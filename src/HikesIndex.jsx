@@ -8,6 +8,7 @@ export function HikesIndex(props) {
           <p>ID: {hike.id}</p>
           <p>Length: {hike.length}</p>
           <p>Location: {hike.city}, {hike.region}</p>
+          <button onClick={() => props.onShowHike(hike)}>More info</button>
         </div>
       ))}
     </div>
