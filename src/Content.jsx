@@ -40,7 +40,6 @@ export function Content() {
       <Modal show={isHikesShowVisible} onClose={handleClose}>
         <HikesShow hike={currentHike} />  
       </Modal>
-
     </div>
   )
 }
