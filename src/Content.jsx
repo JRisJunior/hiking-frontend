@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { HikesIndex } from "./HikesIndex";
 import { HikesShow } from "./HikesShow";
+import { Modal } from "./Modal";
 
 export function Content() {
 
@@ -11,6 +12,8 @@ export function Content() {
   // ];
 
   const [hikes, setHikes] = useState([]);
+  const [isHikesShowVisible, setIsHikesShowVisible] = useState(false);
+  const [currentHike, setCurrentHike] = useState({});
 
   const handleIndexHikes = () => {
     console.log("handleIndexHikes");
@@ -20,12 +23,22 @@ export function Content() {
     });
   };
 
-  useEffect(handleIndexHikes, []);
+   const handleShowHike = (hike) => {
+     console.log("handleShowHike", hike);
+     setIsHikesShowVisible(true);
+     setCurrentHike(hike);
+   };
+   const handleClose = () => {
+     console.log("handleClose");
+     setIsHikesShowVisible(false);
+   }; useEffect(handleIndexHikes, []);
 
   return (
     <div>
-      <HikesIndex hikes={hikes}/>
-      <HikesShow showHike={showHike}/>
+      <HikesIndex hikes={hikes} onShowHike={handleShowHike}/>
+      <Modal show={true}>
+        <h1>Test</h1>
+      </Modal>
     </div>
   )
 }
