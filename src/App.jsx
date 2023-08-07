@@ -19,6 +19,7 @@ function App() {
         <Route path="users">
           <Route path=":userId" element={<UserProfile />} />
         </Route>
+        <Route path="/hikes" element={<Content />} />
       </Routes>
       <Footer />
     </>
